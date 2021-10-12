@@ -37,14 +37,31 @@ var fs = require('fs');
 // }).listen(8080, 127.0,0,1);
 
 // ----- this is for return an application JSON
-http.createServer(function(req, res) {
+// http.createServer(function(req, res) {
     
-    res.writeHead(200, {'Content-Type': 'application/json'});
-    const myObj = {
-        firstName: 'test',
-        lastName: 'testy'
-    }
+//     res.writeHead(200, {'Content-Type': 'application/json'});
+//     const myObj = {
+//         firstName: 'test',
+//         lastName: 'testy'
+//     }
 
-    res.end(JSON.stringify(myObj));
+//     res.end(JSON.stringify(myObj));
+    
+// }).listen(8080, 127.0,0,1);
+
+// ----- this is for handle routing in apis
+http.createServer(function(req, res) {
+
+    if(req.url === '/'){
+        res.writeHead(200, {'Content-Type': 'text/plain'});
+        res.end('this is root');
+    }else if (req.url === '/test'){
+        res.writeHead(200, {'Content-Type': 'text/plain'});
+        res.end('this is test dir');
+    }else{
+        res.writeHead(404, {'Content-Type': 'text/plain'});
+        res.end('can not find this rout');
+    }
+    
     
 }).listen(8080, 127.0,0,1);
