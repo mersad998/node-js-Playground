@@ -29,9 +29,22 @@ var fs = require('fs');
 // }).listen(8080, 127.0,0,1);
 
 // ----- this is for return manipulated html with read stream
+// http.createServer(function(req, res) {
+    
+//     res.writeHead(200, {'Content-Type': 'text/html'});
+//     fs.createReadStream(__dirname + '/index.html').pipe(res);
+    
+// }).listen(8080, 127.0,0,1);
+
+// ----- this is for return an application JSON
 http.createServer(function(req, res) {
     
-    res.writeHead(200, {'Content-Type': 'text/html'});
-    fs.createReadStream(__dirname + '/index.html').pipe(res);
+    res.writeHead(200, {'Content-Type': 'application/json'});
+    const myObj = {
+        firstName: 'test',
+        lastName: 'testy'
+    }
+
+    res.end(JSON.stringify(myObj));
     
 }).listen(8080, 127.0,0,1);
