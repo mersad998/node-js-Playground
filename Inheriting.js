@@ -44,3 +44,5 @@ const myInstance = new(anotherObject);
     // customFunction will available from : myInstance.__proto__.__proto__.customFunction();
 
 myInstance.customFunction();
+
+// implement in ES6 format 
