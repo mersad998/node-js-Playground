@@ -14,3 +14,12 @@ readable.on('data', function (chunk) {
     console.log('chunk: ', chunk);
     writable.write(chunk);
 })
+
+
+// we can use pipe instead of listen to readable stream and pass each chunk to writable stream directly:
+
+var readable = fs.createReadStream(__dirname + '/exampleFile.txt', ); 
+
+var writable = fs.createWriteStream(__dirname + '/exampleFileCopy.txt');
+
+readable.pipe(writable); // and this is work same but simpler and faster
