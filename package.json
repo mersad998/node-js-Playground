@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/mersad998/node-js-Playground/issues"
   },
-  "homepage": "https://github.com/mersad998/node-js-Playground#readme"
+  "homepage": "https://github.com/mersad998/node-js-Playground#readme",
+  "dependencies": {
+    "moment": "^2.29.1"
+  }
 }
