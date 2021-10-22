@@ -23,6 +23,12 @@ app.get('/person/:id', function (req, res) {
 // implement node js built in middleware for static files
 app.use('/assets', express.static(__dirname + '/public'));
 
+// a custom middleware (route is optional)
+app.use('/htmlFileWithStaticStyles', function (req, res, next) {
+    console.log('request url is', req.url);
+    next() // it will trigger next middleware (get / post and ... are some kind of middleware)
+})
+
 // an html that uses the static file
 app.get('/htmlFileWithStaticStyles', function (req, res) {
     res.send(
