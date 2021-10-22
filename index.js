@@ -29,6 +29,8 @@ app.use('/htmlFileWithStaticStyles', function (req, res, next) {
     next() // it will trigger next middleware (get / post and ... are some kind of middleware)
 })
 
+// there are some other useful free middleware in express website
+
 // an html that uses the static file
 app.get('/htmlFileWithStaticStyles', function (req, res) {
     res.send(
