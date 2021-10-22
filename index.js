@@ -38,4 +38,13 @@ app.get('/htmlFileWithStaticStyles', function (req, res) {
     )
 });
 
+//------ work with temp;ate engin's:
+
+app.set('view engine', 'ejs');
+
+app.get('/renderWithEjs/:urlParam', function (req, res) {
+    // first parameter will look for a file in view folder whit given name + .`view engine` format
+    res.render('index', { customParam: req.params.urlParam }); 
+});
+
 app.listen(port);
