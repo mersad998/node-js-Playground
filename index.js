@@ -20,4 +20,14 @@ app.get('/person/:id', function (req, res) {
     res.json({ personId: req.params.id });
 });
 
+// implement node js built in middleware for static files
+app.use('/assets', express.static(__dirname + '/public'));
+
+// an html that uses the static file
+app.get('/htmlFileWithStaticStyles', function (req, res) {
+    res.send(
+        '<html><head><link href=assets/style.css type=text/css rel=stylesheet /></head><body><h1>hello world!</h1></body></html>'
+    )
+});
+
 app.listen(port);
