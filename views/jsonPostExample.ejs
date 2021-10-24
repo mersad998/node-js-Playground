@@ -1,0 +1,22 @@
+<html>
+  <head>
+      <!-- the slash before assets means look for assets folder from base url not current url -->
+    <link href="/assets/style.css" type="text/css" rel="stylesheet" />
+
+    <!-- to get jquery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  </head>
+  <body>
+    this is test for send json
+
+    <script>
+      $.ajax({
+        type: "POST",
+        url: "/jsonPostExample",
+        data: JSON.stringify({firstParam:'test 1', secondParam:'test 2',}),
+        dataType: "Json",
+        contentType: "application/json"
+      })
+    </script>
+  </body>
+</html>
