@@ -4,6 +4,7 @@ var bodyParser = require('body-parser');
 var app = express();
 var port = process.env.PORT || 3000;
 var urlEncodedParser = bodyParser.urlencoded({ extended: false });
+var jsonParser = bodyParser.json();
 
 // this will automatically set the content type to text/html
 app.get('/', function (req, res) {
@@ -64,6 +65,19 @@ app.get('/postExample', function (req, res) {
 // the second parameter work as a middleware that add `body` to `req` object
 app.post('/postExample', urlEncodedParser, function (req, res) {
     res.send('Thank you!');
+    console.log(req.body.firstParam);
+    console.log(req.body.secondParam);
+});
+
+// to render the main form available on : http://localhost:3000/jsonPostExample
+app.get('/jsonPostExample', function (req, res) {
+    res.render('jsonPostExample'); 
+});
+
+
+// to get and parse json from ajax
+app.post('/jsonPostExample', jsonParser, function (req, res) {
+    res.send('Thank you for send json!');
     console.log(req.body.firstParam);
     console.log(req.body.secondParam);
 });
