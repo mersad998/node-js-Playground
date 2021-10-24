@@ -40,11 +40,18 @@ app.get('/htmlFileWithStaticStyles', function (req, res) {
 
 //------ work with temp;ate engin's:
 
-app.set('view engine', 'ejs');
+// app.set('view engine', 'ejs');
 
-app.get('/renderWithEjs/:urlParam', function (req, res) {
-    // first parameter will look for a file in view folder whit given name + .`view engine` format
-    res.render('index', { customParam: req.params.urlParam }); 
+// app.get('/renderWithEjs/:urlParam', function (req, res) {
+//     // first parameter will look for a file in view folder whit given name + .`view engine` format
+//     res.render('index', { customParam: req.params.urlParam }); 
+// });
+
+// read query string . example on : http://localhost:3000/readQueryString?myParameter=1123
+app.get('/readQueryString', function (req, res) {
+    res.send(
+        res.json({ customQuery: req.query.myParameter })
+    )
 });
 
 app.listen(port);
