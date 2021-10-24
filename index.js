@@ -1,7 +1,9 @@
 var express = require('express');
-var app = express();
+var bodyParser = require('body-parser');
 
+var app = express();
 var port = process.env.PORT || 3000;
+var urlEncodedParser = bodyParser.urlencoded({ extended: false });
 
 // this will automatically set the content type to text/html
 app.get('/', function (req, res) {
@@ -40,12 +42,12 @@ app.get('/htmlFileWithStaticStyles', function (req, res) {
 
 //------ work with temp;ate engin's:
 
-// app.set('view engine', 'ejs');
+app.set('view engine', 'ejs');
 
-// app.get('/renderWithEjs/:urlParam', function (req, res) {
-//     // first parameter will look for a file in view folder whit given name + .`view engine` format
-//     res.render('index', { customParam: req.params.urlParam }); 
-// });
+app.get('/renderWithEjs/:urlParam', function (req, res) {
+    // first parameter will look for a file in view folder whit given name + .`view engine` format
+    res.render('index', { customParam: req.params.urlParam }); 
+});
 
 // read query string . example on : http://localhost:3000/readQueryString?myParameter=1123
 app.get('/readQueryString', function (req, res) {
@@ -53,5 +55,18 @@ app.get('/readQueryString', function (req, res) {
         res.json({ customQuery: req.query.myParameter })
     )
 });
+
+// to render the main form available on : http://localhost:3000/postExample
+app.get('/postExample', function (req, res) {
+    res.render('formWithPostRequest'); 
+});
+
+// the second parameter work as a middleware that add `body` to `req` object
+app.post('/postExample', urlEncodedParser, function (req, res) {
+    res.send('Thank you!');
+    console.log(req.body.firstParam);
+    console.log(req.body.secondParam);
+});
+
 
 app.listen(port);
