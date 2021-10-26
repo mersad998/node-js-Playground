@@ -1,6 +1,5 @@
 var fs = require('fs');
 
-
 var readable = fs.createReadStream(__dirname + '/exampleFile.txt', {
     encoding: 'utf-8',
     highWaterMark: 16 * 1024 //the highWaterMark is size of buffer for each chunk in bit
@@ -14,7 +13,6 @@ readable.on('data', function (chunk) {
     console.log('chunk: ', chunk);
     writable.write(chunk);
 })
-
 
 // we can use pipe instead of listen to readable stream and pass each chunk to writable stream directly:
 
