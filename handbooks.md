@@ -19,3 +19,14 @@ var obj = {
 obj.greeter() // only can pass parameters in parentheses
 obj.greeter.call({name:jane},param1,param2)  // first object that pass to function will replace its own keys instead of this of obj , then pass params in sequence
 obj.greeter.apply({name:jane},[param1,param2])  // first object that pass to function will replace its own keys instead of this of obj , then pass params in an array
+
+
+
+--------------------- EXPRESS --------------------
+default port is : 27017
+
+command `mongod` will start the server 
+command `mongo` will open the mongo db shell if server be running
+
+note : you van run `mongod —port [custom port]` and `mongo —port [custom port]` for run on specific port
+
