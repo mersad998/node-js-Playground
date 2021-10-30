@@ -28,3 +28,20 @@ You can also view the log file to see the current status of your mongod process:
 
 run `mongosh` in terminal to run mongosh
 command `mongotop` will log the usage every second
+
+you can create a cfg (config) file , manipulate and rin with `mongod --config [cfg path] or -f [cfg path]`
+
+ ### --- in db shell :
+
+ `db.help()` give all available commands
+ `show dbs` list of dbs in this mongo server
+ `use [db name]` will checkout (create if not exist) db
+ `db.dropDatabase()` will delete db
+
+ -----
+ `db.users.help()` show all available commands
+ `db.users.find()` show the all data s of user collection
+ `db.users.find().pretty()` show the all data s of user collection in formatted form
+ `db.users.insertOne({name: "my name"})` will create users collection and one document in it
+ `show collections` show all collections
+ `db.users.drop()` will delete the users collection
