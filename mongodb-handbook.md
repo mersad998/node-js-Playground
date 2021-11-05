@@ -55,3 +55,8 @@ you can create a cfg (config) file , manipulate and rin with `mongod --config [c
 #CRUD `db.users.updateOne([target], [{[operator]: [new value]}, [options]])`
 ex: `db.users.updateOne({name: "my name"}, {$set: {lastName: "my last name"}})`
 * it can be a new property of field to create it or existed property to update it
+
+#CRUD `db.users.updateMany([target], [{[operator]: [new value]}, [options]])`
+ex: `db.users.updateMany({age: 25}, {$set: {isAdult: true}})`
+
+#CRUD `db.users.update({id: 5}, {gender: "male"})` it will override second object to an object with first parameter properties completely! it can be dangerous because the other properties will remove.
