@@ -42,6 +42,12 @@ you can create a cfg (config) file , manipulate and rin with `mongod --config [c
  `db.users.help()` show all available commands
  `db.users.find()` show the all data s of user collection
  `db.users.find().pretty()` show the all data s of user collection in formatted form
- `db.users.insertOne({name: "my name"})` will create users collection and one document in it
+ #CRUD `db.users.insertOne({name: "my name"})` will create users collection if not exist and one document in it
  `show collections` show all collections
  `db.users.drop()` will delete the users collection
+
+ #CRUD `db.users.insertMany([{name: "my name"}, {name: "your name"}])` will create users collection if not exist and some documents in it
+
+ `db.users.findOne()` returns the first record in collection
+ `db.users.findOne({name: "your name"})` returns the record with special property in collection
+ * `insertOne()` dose not accept `.pretty()`
