@@ -51,3 +51,7 @@ you can create a cfg (config) file , manipulate and rin with `mongod --config [c
  `db.users.findOne()` returns the first record in collection
  `db.users.findOne({name: "your name"})` returns the record with special property in collection
  * `insertOne()` dose not accept `.pretty()`
+
+#CRUD `db.users.updateOne([target], [{[operator]: [new value]}, [options]])`
+ex: `db.users.updateOne({name: "my name"}, {$set: {lastName: "my last name"}})`
+* it can be a new property of field to create it or existed property to update it
