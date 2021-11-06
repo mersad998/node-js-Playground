@@ -65,3 +65,4 @@ ex: `db.users.updateMany({age: 25}, {$set: {isAdult: true}})`
 
 #CRUD `db.users.deleteOne({id: 5})` delete item with id 5
 #CRUD `db.users.deleteMany({age: 20})` delete all users with age 20
+#CRUD `db.users.deleteMany({})` delete all users
