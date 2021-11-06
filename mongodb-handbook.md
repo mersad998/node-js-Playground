@@ -64,3 +64,4 @@ ex: `db.users.updateMany({age: 25}, {$set: {isAdult: true}})`
 #CRUD `db.users.replaceOne({id: 5}, {gender: "male"})` it will override second object to an object with first parameter properties completely! it can be dangerous because the other properties will remove.
 
 #CRUD `db.users.deleteOne({id: 5})` delete item with id 5
+#CRUD `db.users.deleteMany({age: 20})` delete all users with age 20
