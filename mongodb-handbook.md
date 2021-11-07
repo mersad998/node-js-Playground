@@ -85,4 +85,28 @@ to connect running mongo service can use : `mongodb://[ip / localhost]:[port]`
 -- you can use all of options in shell like this : `db.users.find({}, {age: 1}).sort({age: 1}).limit(1).pretty()`
 
 aggregations in mongo db are similar to where conditions in SQL
-for example : `db.users.find({ $and : [ { age: 25 } ]}, {age: 1})` means records with exact age 25
+for example : `db.users.find({ $and : [ { age: 25 } ]}, {age: 1})` means records with age 25
+
+or queries like this :
+
+db.getCollection("users").aggregate([
+    {
+        $match : {age: { $in : [ 23, 25]}} // this is where clause
+    },
+    {
+        $project : {firstName: 1, lastName: 1, age: 1} // this is projection
+    },
+    {
+        $sort {age: 1} 
+    },
+    {
+        $limit: 3
+    },
+    {
+        $skip: 1
+    }
+])
+
+
+
+$match should write before other aggregations
