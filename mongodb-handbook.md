@@ -78,3 +78,4 @@ to connect running mongo service can use : `mongodb://[ip / localhost]:[port]`
   `db.users.find({},{firstName: 1})`
 
 * ‍‍`skip` in db will ignore records from index 0 into index the skip value that you passed
+* ‍‍`limit` will count records and return records from index 0 into the value that you passed tou your limit parameter
