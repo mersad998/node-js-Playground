@@ -71,4 +71,8 @@ mongo compass = a G-ui for mongo db
 to connect running mongo service can use : `mongodb://[ip / localhost]:[port]`
 
 * `projection` is columns that you want to return when select from your db
-* for example if you inter `{fName : 1, lName : 1}` you only get `id`, `fName` and `lName` in your select
+ for example if you inter `{firstName : 1, lastName : 1}` you only get `_id`, `firstName` and `lastName` in your select
+ and if you enter `{_id: 0 ,firstName : 1, lastName : 1}` you only get `firstName` and `lastName` in your select
+
+* projection in shell is the second parameter of `.find()` function . for example :
+  `db.users.find({},{firstName: 1})`
