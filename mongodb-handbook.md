@@ -3,8 +3,8 @@ default port is : 27017
 command `mongod` will start the server 
 command `mongo` will open the mongo db shell if server be running
 
-note : you can run `mongod —port [custom port]` and `mongo —port [custom port]` for run on specific port
-note : you can add `--dbpath` and `--logpath` to change default db path and log path :)
+* you can run `mongod —port [custom port]` and `mongo —port [custom port]` for run on specific port
+* you can add `--dbpath` and `--logpath` to change default db path and log path :)
 
 
 default path on Apple M1 Processor: 
@@ -81,3 +81,8 @@ to connect running mongo service can use : `mongodb://[ip / localhost]:[port]`
 * ‍‍`limit` will count records and return records from index 0 into the value that you passed tou your limit parameter
 * `sort` will sort your data base of value that you pass to your field . for example `{age: 1}` will sort data by field age in 
   Ascending format and  `{age: -1}` will sort data by field age in Descending format
+
+-- you can use all of options in shell like this : `db.users.find({}, {age: 1}).sort({age: 1}).limit(1).pretty()`
+
+aggregations in mongo db are similar to where conditions in SQL
+for example : `db.users.find({ $and : [ { age: 25 } ]}, {age: 1})` means records with exact age 25
