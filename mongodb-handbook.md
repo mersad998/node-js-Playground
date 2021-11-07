@@ -66,3 +66,9 @@ ex: `db.users.updateMany({age: 25}, {$set: {isAdult: true}})`
 #CRUD `db.users.deleteOne({id: 5})` delete item with id 5
 #CRUD `db.users.deleteMany({age: 20})` delete all users with age 20
 #CRUD `db.users.deleteMany({})` delete all users
+
+mongo compass = a G-ui for mongo db
+to connect running mongo service can use : `mongodb://[ip / localhost]:[port]`
+
+* `projection` is columns that you want to return when select from your db
+* for example if you inter `{fName : 1, lName : 1}` you only get `id`, `fName` and `lName` in your select
