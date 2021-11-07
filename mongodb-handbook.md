@@ -76,3 +76,5 @@ to connect running mongo service can use : `mongodb://[ip / localhost]:[port]`
 
 * projection in shell is the second parameter of `.find()` function . for example :
   `db.users.find({},{firstName: 1})`
+
+* ‍‍`skip` in db will ignore records from index 0 into index the skip value that you passed
