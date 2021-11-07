@@ -79,3 +79,5 @@ to connect running mongo service can use : `mongodb://[ip / localhost]:[port]`
 
 * ‍‍`skip` in db will ignore records from index 0 into index the skip value that you passed
 * ‍‍`limit` will count records and return records from index 0 into the value that you passed tou your limit parameter
+* `sort` will sort your data base of value that you pass to your field . for example `{age: 1}` will sort data by field age in 
+  Ascending format and  `{age: -1}` will sort data by field age in Descending format
